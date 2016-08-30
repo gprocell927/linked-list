@@ -4,10 +4,12 @@
 //
 // var siteURL = document.querySelector('.bookmark-site-url');
 
-var siteName = $('.bookmark-site-name');
+
 var createButton = $('.submit');
 
 
 createButton.on('click', function(event){
   event.preventDefault();
-$('.user-site').append(siteName);});
+  var siteName = $('.bookmark-site-name').val();
+  // console.log(siteName);});
+$('.user-site').text(siteName);});
