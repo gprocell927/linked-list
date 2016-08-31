@@ -9,11 +9,12 @@ $('.create-button').on('click', function(event){
   event.preventDefault();
   var siteName = $('.bookmark-site-name').val();
   // console.log(siteName);});
-$('#test1').text(siteName);
+  $('#test1').text(siteName);
 
   var siteURL = $('.bookmark-site-url').val();
+  var siteLink = '<a href>'+siteURL+'</a>';
   // console.log(siteURL);});
-  $('#test').text(siteURL);
+  $('#test').append(siteLink);
 });
 
 
@@ -26,4 +27,4 @@ $('.removeLink').on('click', function(){
 });
 
 
-'<a href='+siteURL+' class='new-bookmark' target='_blank'>"+siteURL+'</a>'
+// '<a href='+siteURL+' class='new-bookmark' target='_blank'>"+siteURL+'</a>'
