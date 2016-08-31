@@ -8,9 +8,6 @@
 $('.create-button').on('click', function(event){
   event.preventDefault();
 
-$('.markRead').on('click', function() {
-  $(this).toggleClass('.read');
-});
  var siteName = $('.bookmark-site-name').val();
  var siteURL = $('.bookmark-site-url').val();
 
@@ -19,15 +16,25 @@ $('.markRead').on('click', function() {
  // $("#bookmarks tr:last").after(myRow);
  $('tbody').append(`<tr class="newRow">
    <td class="site-name-cell">${siteName}</td>
-   <td class="site-url-cell">${siteURL}</td>
- </tr>`)
- // $('.site-name-cell').append(siteName);
- // $('.site-url-cell').append(siteURL);
+   <td class="site-url-cell"><a href="${siteURL}">${siteURL}</a></td>
+   <td><button class="markRead">Mark As Read</button></td>
+    <td><button class="removeLink">Remove Bookmark</button></td>
+ </tr>`);
 
-$('.removeLink').on('click', function(){
-  $(this).parents('tr').first().remove();
+ $('.markRead').on('click', function() {
+   $(this).toggleClass('.read');
+   if ($(this).text() === "Mark As Read"){
+    $(this).text('Mark As Unread');
+  } else {
+    $(this).text("Mark As Read");
+  }
+
+ });
+
+  $('.removeLink').on('click', function(){
+    $(this).parents('tr').first().remove();
+  });
 });
-
 
  function validateUserInput (site,url) {
    if (($.isEmptyObject(site)) ||($.isEmptyObject(url))) {
