@@ -1,0 +1,10 @@
+th, td {
+  padding: 7px 10px 10px 10px;
+}
+
+
+th {
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid black;
+  border-top: 1px solid black;
+}

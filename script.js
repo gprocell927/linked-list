@@ -7,24 +7,29 @@
 
 $('.create-button').on('click', function(event){
   event.preventDefault();
-  var siteName = $('.bookmark-site-name').val();
-  // console.log(siteName);});
-  $('#test1').text(siteName);
-
-  var siteURL = $('.bookmark-site-url').val();
-  var siteLink = '<a href>'+siteURL+'</a>';
-  // console.log(siteURL);});
-  $('#test').append(siteLink);
-});
-
 
 $('.markRead').on('click', function() {
   $(this).toggleClass('.read');
 });
+ var siteName = $('.bookmark-site-name').val();
+ var siteURL = $('.bookmark-site-url').val();
+
+ validateUserInput(siteName,siteURL);
+
+ // $("#bookmarks tr:last").after(myRow);
+ $('tbody').append(`<tr class="newRow">
+   <td class="site-name-cell">${siteName}</td>
+   <td class="site-url-cell">${siteURL}</td>
+ </tr>`)
+ // $('.site-name-cell').append(siteName);
+ // $('.site-url-cell').append(siteURL);
 
 $('.removeLink').on('click', function(){
   $(this).parents('tr').first().remove();
 });
 
 
-// '<a href='+siteURL+' class='new-bookmark' target='_blank'>"+siteURL+'</a>'
+ function validateUserInput (site,url) {
+   if (($.isEmptyObject(site)) ||($.isEmptyObject(url))) {
+   alert("ERROR: Please enter a valid site name and URL.");}
+ }
