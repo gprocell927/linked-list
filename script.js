@@ -13,8 +13,12 @@ $('.create-button').on('click', function(event){
  validateUserInput(siteName,siteURL);
 
  // $("#bookmarks tr:last").after(myRow);
- $('.site-name-cell').append(siteName);
- $('.site-url-cell').append(siteURL);
+ $('tbody').append(`<tr class="newRow">
+   <td class="site-name-cell">${siteName}</td>
+   <td class="site-url-cell">${siteURL}</td>
+ </tr>`)
+ // $('.site-name-cell').append(siteName);
+ // $('.site-url-cell').append(siteURL);
 
 });
 
