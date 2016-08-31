@@ -14,5 +14,16 @@ $('#test1').text(siteName);
   var siteURL = $('.bookmark-site-url').val();
   // console.log(siteURL);});
   $('#test').text(siteURL);
-
 });
+
+
+$('.markRead').on('click', function() {
+  $(this).toggleClass('.read');
+});
+
+$('.removeLink').on('click', function(){
+  $(this).parents('tr').first().remove();
+});
+
+
+'<a href='+siteURL+' class='new-bookmark' target='_blank'>"+siteURL+'</a>'
