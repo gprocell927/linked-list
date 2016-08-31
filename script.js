@@ -10,16 +10,15 @@ $('.create-button').on('click', function(event){
  var siteName = $('.bookmark-site-name').val();
  var siteURL = $('.bookmark-site-url').val();
 
- $('#bookmarks').append($('<tr>').append(siteName))
-              .append($('<td>').append(siteURL));
+ validateUserInput(siteName,siteURL);
 
+ // $("#bookmarks tr:last").after(myRow);
+ $('.site-name-cell').append(siteName);
+ $('.site-url-cell').append(siteURL);
 
-
-    if (($.isEmptyObject(siteName)) ||($.isEmptyObject(siteURL))) {
-    alert("ERROR: Please enter a valid site name and URL.");
-  }
-//   would like to refactor this, but I couldn't get this to work if I split it into it's own function and made local vars global.
-
-$('#test1').text(siteName);
-$('#test').text(siteURL);
 });
+
+ function validateUserInput (site,url) {
+   if (($.isEmptyObject(site)) ||($.isEmptyObject(url))) {
+   alert("ERROR: Please enter a valid site name and URL.");}
+ }
