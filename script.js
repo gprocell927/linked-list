@@ -7,6 +7,10 @@
 
 $('.create-button').on('click', function(event){
   event.preventDefault();
+
+$('.markRead').on('click', function() {
+  $(this).toggleClass('.read');
+});
  var siteName = $('.bookmark-site-name').val();
  var siteURL = $('.bookmark-site-url').val();
 
@@ -20,7 +24,10 @@ $('.create-button').on('click', function(event){
  // $('.site-name-cell').append(siteName);
  // $('.site-url-cell').append(siteURL);
 
+$('.removeLink').on('click', function(){
+  $(this).parents('tr').first().remove();
 });
+
 
  function validateUserInput (site,url) {
    if (($.isEmptyObject(site)) ||($.isEmptyObject(url))) {
