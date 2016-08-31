@@ -11,11 +11,6 @@ function toggleCreate() {
     }
 }
 
-// toggleCreate(siteName,siteURL);
-
-// this changes class of prop of read button
-
-
 function toggleRead(parentRow){
   parentRow.toggleClass('.read');
   changeReadText(parentRow);
@@ -41,9 +36,11 @@ function addNewBookmark(){
  $('tbody').find('.bookmark')
 
  function validateUserInput (title, url) {
-
    if ($.isEmptyObject(title) || $.isEmptyObject(url)) {
-   alert('ERROR: Please enter a valid site name and URL.');}
+     alert('ERROR: Please enter a valid site name and URL.');
+   }else {
+       addNewBookmark();
+     }
  }
 
  $('.site-input').on('keyup', function(){
@@ -53,8 +50,7 @@ function addNewBookmark(){
  $createButton.on('click', function(event){
   event.preventDefault();
   validateUserInput($siteName.val(), $siteURL.val());
-  addNewBookmark();
-  // toggleRead();
+  // addNewBookmark();
   });
 
   $('tbody').on('click', '.removeLink', function(){
