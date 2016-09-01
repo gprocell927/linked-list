@@ -1,6 +1,8 @@
 var $siteName = $('.bookmark-site-name');
 var $siteURL = $('.bookmark-site-url');
 var $createButton = $('.create-button');
+// var $totalReadBookmarks = $('.')
+// var $totalUnreadBookmarks =
 
 
 function toggleCreate() {
@@ -33,7 +35,7 @@ function addNewBookmark(){
    </tr>`);
  }
 
- $('tbody').find('.bookmark')
+ // $('tbody).find('.bookmark')
 
  function validateUserInput (title, url) {
    if ($.isEmptyObject(title) || $.isEmptyObject(url)) {
@@ -43,6 +45,10 @@ function addNewBookmark(){
      }
  }
 
+ function displayBookmarkCount (){
+  $('#totalBookmarksField').text($('.newRow').length);
+ }
+
  $('.site-input').on('keyup', function(){
    toggleCreate();
  });
@@ -50,7 +56,7 @@ function addNewBookmark(){
  $createButton.on('click', function(event){
   event.preventDefault();
   validateUserInput($siteName.val(), $siteURL.val());
-  // addNewBookmark();
+  displayBookmarkCount ();
   });
 
   $('tbody').on('click', '.removeLink', function(){
