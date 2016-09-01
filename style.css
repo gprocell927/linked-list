@@ -4,14 +4,13 @@ body {
 header {
   background-color:#00bcd4;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: baseline;
 }
 h1 {
   color: white;
 }
 h3 {
+  text-align: center;
   font-family: 'Architects Daughter', cursive;
 }
 form {
@@ -25,8 +24,7 @@ input {
 }
 table {
   border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 th, td {
   padding: 7px 12px 7px 12px;
@@ -52,6 +50,8 @@ tr:nth-of-type(odd) {
 .count {
   display: flex;
   justify-content: space-around;
+  padding-left: 75px;
+  padding-right: 75px;
 }
 .create-button {
   margin: 5px;
@@ -73,10 +73,18 @@ tr:nth-of-type(odd) {
     display: block;
     border: none;
     text-align: center;
+    padding: 5px;
+    font-size: .85em;
+  }
+  a {
+    font-size: .75em;
   }
   .count {
     display: block;
     text-align: center;
+  }
+  .count p {
+    font-size: .85em;
   }
   .newRow {
     border: 1px solid black;
