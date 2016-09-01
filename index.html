@@ -12,10 +12,15 @@
 
     <section class="user-input">
       <form>
-      Site Name:<input class="bookmark-site-name" type="text" name="site-name">
-      Site URL:<input class="bookmark-site-url" type="url" name="url">
-      <input class="create-button" type="submit" value="Create">
+        <p>Site Name:</p>
+        <input class="bookmark-site-name site-input" type="text" name="site-name">
+        <p>Site URL:</p>
+        <input class="bookmark-site-url site-input" type="url" name="url">
+        <button class="create-button" type="submit" disabled>Create</button>
       </form>
+      <p>Total Bookmarks: </p><p id="totalBookmarksField"></p> 
+      <p>Total Unread Bookmarks: </p>
+      <p> Total Read Bookmarks: </p>
     </section>
     <section id="user-bookmarks">
 
