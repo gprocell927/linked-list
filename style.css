@@ -10,6 +10,7 @@ header {
 
 h1 {
   color: white;
+  letter-spacing: 4px;
 }
 
 h3 {
@@ -55,7 +56,7 @@ table button {
 }
 
 tr:nth-of-type(odd) {
-  background-color: #03a9f4;
+  background-color: #f2e6d9;
 }
 
 .count {
@@ -65,8 +66,18 @@ tr:nth-of-type(odd) {
   padding-right: 75px;
 }
 
-.create-button {
+.create-button,
+.clear-read-button {
   margin: 5px;
+  border: 1px solid black;
+  background-color: #f2e6d9;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.user-input p {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media screen and (max-width: 700px) {

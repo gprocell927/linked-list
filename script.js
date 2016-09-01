@@ -54,15 +54,6 @@ function addNewBookmark(){
   $('#total-unread-bookmarks-field').text(totalUnreadBookmarks);
  }
 
- function validateURL (){
-   if (($siteURL).substr(0, 7) !== "http://" &&
-       ($siteURL).substr(0, 8) !== "https://" &&
-       ($siteURL).substr(0, 4) !== "www."){
-        alert('ERROR: Please enter a valid site URL.');}
-  else {
-      addNewBookmark();
- }}
-
  $('.site-input').on('keyup', function(){
    toggleCreate();
  });
