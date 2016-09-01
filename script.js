@@ -1,9 +1,6 @@
 var $siteName = $('.bookmark-site-name');
 var $siteURL = $('.bookmark-site-url');
 var $createButton = $('.create-button');
-// var $totalReadBookmarks = $('.')
-// var $totalUnreadBookmarks =
-
 
 function toggleCreate() {
     if ($siteName.val() === '' && $siteURL.val() === '') {
@@ -14,7 +11,7 @@ function toggleCreate() {
 }
 
 function toggleRead(parentRow){
-  parentRow.toggleClass('.read');
+  parentRow.toggleClass('read');
   changeReadText(parentRow);
 }
 
@@ -35,9 +32,7 @@ function addNewBookmark(){
    </tr>`);
  }
 
- // $('tbody).find('.bookmark')
-
- function validateUserInput (title, url) {
+function validateUserInput (title, url) {
    if ($.isEmptyObject(title) || $.isEmptyObject(url)) {
      alert('ERROR: Please enter a valid site name and URL.');
    }else {
@@ -46,7 +41,16 @@ function addNewBookmark(){
  }
 
  function displayBookmarkCount (){
-  $('#totalBookmarksField').text($('.newRow').length);
+  $('#total-bookmarks-field').text($('.newRow').length);
+ }
+
+ function displayReadBookmarksCount (){
+  $('#total-read-bookmarks-field').text($('.read').length);
+ }
+
+ function displayUnreadBookmarksCount (){
+   var totalUnreadBookmarks = $('.newRow').length - $('.read').length;
+  $('#total-unread-bookmarks-field').text(totalUnreadBookmarks);
  }
 
  $('.site-input').on('keyup', function(){
@@ -62,8 +66,12 @@ function addNewBookmark(){
   $('tbody').on('click', '.removeLink', function(){
     $(this).parents('tr').first().remove();
     displayBookmarkCount ();
+    displayReadBookmarksCount ();
+    displayUnreadBookmarksCount ();
   });
 
   $('tbody').on('click','.markRead', function() {
     toggleRead($(this));
+    displayReadBookmarksCount ();
+    displayUnreadBookmarksCount ();
   });
