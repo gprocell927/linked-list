@@ -48,29 +48,30 @@ th {
 }
 
 table button {
-    background-color: #3f51b5;
+    background-color: #00838F;
     border: none;
     color: white;
-    text-align: center;
     text-decoration: none;
 }
 
 tr:nth-of-type(odd) {
-  background-color: #f2e6d9;
+  background-color: #B2EBF2;
 }
 
 .count {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-left: 25px;
+  padding-right: 25px;
+  align-items: center;
 }
 
 .create-button,
 .clear-read-button {
   margin: 5px;
   border: 1px solid black;
-  background-color: #f2e6d9;
+  background-color: #FFF176;
   height: 30px;
   margin-left: 20px;
 }
