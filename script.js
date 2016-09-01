@@ -24,24 +24,24 @@ function changeReadText(buttonText){
 }
 
 function addNewBookmark(){
-  $('tbody').append(`<tr class="newRow">
+  $('tbody').append(`<tr class="new-row">
      <td class="site-name-cell">${$siteName.val()}</td>
      <td class="site-url-cell"><a href="${$siteURL.val()}">${$siteURL.val()}</a></td>
-     <td><button class="markRead">Mark As Read</button></td>
-     <td><button class="removeLink">Remove Bookmark</button></td>
+     <td><button class="mark-read">Mark As Read</button></td>
+     <td><button class="remove-link">Remove Bookmark</button></td>
    </tr>`);
  }
 
  function validateUserInput (title, url) {
    if ($.isEmptyObject(title) || $.isEmptyObject(url)) {
      alert('ERROR: Please enter a valid site name and URL.');
-   }else {
+   } else {
        addNewBookmark();
      }
  }
 
  function displayBookmarkCount (){
-  $('#total-bookmarks-field').text($('.newRow').length);
+  $('#total-bookmarks-field').text($('.new-row').length);
  }
 
  function displayReadBookmarksCount (){
@@ -70,16 +70,17 @@ function addNewBookmark(){
   event.preventDefault();
   validateUserInput($siteName.val(), $siteURL.val());
   displayBookmarkCount ();
+  displayUnreadBookmarksCount ();
   });
 
-  $('tbody').on('click', '.removeLink', function(){
+  $('tbody').on('click', '.remove-link', function(){
     $(this).parents('tr').first().remove();
     displayBookmarkCount ();
     displayReadBookmarksCount ();
     displayUnreadBookmarksCount ();
   });
 
-  $('tbody').on('click','.markRead', function() {
+  $('tbody').on('click','.mark-read', function() {
     toggleRead($(this));
     displayReadBookmarksCount ();
     displayUnreadBookmarksCount ();
