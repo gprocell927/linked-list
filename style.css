@@ -74,7 +74,6 @@ tr:nth-of-type(odd) {
     border: none;
     text-align: center;
     padding: 5px;
-    font-size: .85em;
   }
   a {
     font-size: .75em;
