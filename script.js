@@ -1,6 +1,7 @@
 var $siteName = $('.bookmark-site-name');
 var $siteURL = $('.bookmark-site-url');
 var $createButton = $('.create-button');
+var $clearBookmarkButton = $('.clear-read-button');
 
 function toggleCreate() {
     if ($siteName.val() === '' && $siteURL.val() === '') {
@@ -49,18 +50,9 @@ function addNewBookmark(){
  }
 
  function displayUnreadBookmarksCount (){
-  var totalUnreadBookmarks = $('.newRow').length - $('.read').length;
+  var totalUnreadBookmarks = $('.new-row').length - $('.read').length;
   $('#total-unread-bookmarks-field').text(totalUnreadBookmarks);
  }
-
- function validateURL (){
-   if (($siteURL).substr(0, 7) !== "http://" &&
-       ($siteURL).substr(0, 8) !== "https://" &&
-       ($siteURL).substr(0, 4) !== "www."){
-        alert('ERROR: Please enter a valid site URL.');}
-  else {
-      addNewBookmark();
- }}
 
  $('.site-input').on('keyup', function(){
    toggleCreate();
@@ -86,8 +78,8 @@ function addNewBookmark(){
     displayUnreadBookmarksCount ();
   });
 
-
-// Cannot get clear read button to clear
-  $('.read').on('click','.clear-read-button',function(){
-    $(this).parents('tr').remove();
+  $clearBookmarkButton.on('click',function(){
+    $('.read').parents('tr').remove();
+    displayReadBookmarksCount ();
+    displayBookmarkCount ();
   });

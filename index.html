@@ -4,30 +4,39 @@
     <meta charset="utf-8">
     <link href="reset.css" type="text/css" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
-    <title>Linked List</title>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <title>My Bookmarks</title>
   </head>
-  <body>
 
-    <h1>Header</h1>
+  <body>
+    <header>
+      <h1>My Bookmarks</h1>
+    </header>
 
     <section class="user-input">
+      <h3>Sources of inspiration, tools, and resources</h3>
       <form>
-        <p>Site Name:</p>
+        <p>Enter Site Name:</p>
         <input class="bookmark-site-name site-input" type="text" name="site-name">
-        <p>Site URL:</p>
+
+        <p>Enter Site URL:</p>
         <input class="bookmark-site-url site-input" type="url" name="url">
+
         <button class="create-button" type="submit" disabled>Create</button>
       </form>
+    </section>
+
+    <section class="count">
       <p>Total Bookmarks: </p><p id="total-bookmarks-field"></p>
       <p>Total Unread Bookmarks: </p><p
       id="total-unread-bookmarks-field"></p>
       <p> Total Read Bookmarks: </p><p
       id="total-read-bookmarks-field"></p>
       <button class="clear-read-button">Clear Read Bookmarks</button>
-
     </section>
-    <section id="user-bookmarks">
 
+    <section id="user-bookmarks">
       <table id="bookmarks">
         <thead>
            <tr>
@@ -36,17 +45,14 @@
             <th>Mark as Read</th>
             <th>Remove Bookmark</th>
           </tr>
-
         </thead>
+
         <tbody>
         </tbody>
 
-
       </table>
-
     </section>
-
-
+  </body>
 
     <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
     <script src="script.js"></script>
