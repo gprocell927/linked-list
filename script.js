@@ -61,6 +61,7 @@ function addNewBookmark(){
 
   $('tbody').on('click', '.removeLink', function(){
     $(this).parents('tr').first().remove();
+    displayBookmarkCount ();
   });
 
   $('tbody').on('click','.markRead', function() {
