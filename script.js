@@ -62,6 +62,7 @@ function addNewBookmark(){
   event.preventDefault();
   validateUserInput($siteName.val(), $siteURL.val());
   displayBookmarkCount ();
+  displayReadBookmarksCount ();
   displayUnreadBookmarksCount ();
   });
 
