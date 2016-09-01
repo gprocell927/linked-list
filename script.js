@@ -32,7 +32,7 @@ function addNewBookmark(){
    </tr>`);
  }
 
-function validateUserInput (title, url) {
+ function validateUserInput (title, url) {
    if ($.isEmptyObject(title) || $.isEmptyObject(url)) {
      alert('ERROR: Please enter a valid site name and URL.');
    }else {
@@ -49,9 +49,18 @@ function validateUserInput (title, url) {
  }
 
  function displayUnreadBookmarksCount (){
-   var totalUnreadBookmarks = $('.newRow').length - $('.read').length;
+  var totalUnreadBookmarks = $('.newRow').length - $('.read').length;
   $('#total-unread-bookmarks-field').text(totalUnreadBookmarks);
  }
+
+ function validateURL (){
+   if (($siteURL).substr(0, 7) !== "http://" &&
+       ($siteURL).substr(0, 8) !== "https://" &&
+       ($siteURL).substr(0, 4) !== "www."){
+        alert('ERROR: Please enter a valid site URL.');}
+  else {
+      addNewBookmark();
+ }}
 
  $('.site-input').on('keyup', function(){
    toggleCreate();
@@ -74,4 +83,10 @@ function validateUserInput (title, url) {
     toggleRead($(this));
     displayReadBookmarksCount ();
     displayUnreadBookmarksCount ();
+  });
+
+
+// Cannot get clear read button to clear
+  $('.read').on('click','.clear-read-button',function(){
+    $(this).parents('tr').remove();
   });
